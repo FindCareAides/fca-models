@@ -1,0 +1,30 @@
+{
+  "name": "fca-models",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FindCareAides/fca-models.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FindCareAides/fca-models/issues"
+  },
+  "homepage": "https://github.com/FindCareAides/fca-models#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
