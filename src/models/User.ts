@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model, models, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export enum UserRoleEnum {
@@ -47,4 +47,4 @@ const UserSchema = new Schema<IUser>(
 
 UserSchema.index({ facilityId: 1, role: 1 });
 
-export const UserModel = model<IUser>("User", UserSchema);
+export const UserModel: Model<UserSchema> = models.User || model<IUser>("User", UserSchema);
