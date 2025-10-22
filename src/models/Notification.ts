@@ -23,10 +23,10 @@ export interface INotification extends BaseDocument, Document {
 }
 
 const NotificationSchema = new Schema<INotification>({
-  userId: { type: mongoose.Types.ObjectId, ref: 'User', required: true },
+  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   type: { type: String, enum: NotificationTypeEnum, default: NotificationTypeEnum.Info },
   message: String,
-  status: { type: String, enum: NotificationStatusEnum, default: 'sent' },
+  status: { type: String, enum: NotificationStatusEnum, default: NotificationStatusEnum.Sent },
   createdAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 

@@ -1,7 +1,7 @@
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
 
 export interface BaseDocument {
-  _id: mongoose.Types.ObjectId;
+  // _id: mongoose.Types.ObjectId;
   createdAt?: Date;
   updatedAt?: Date;
 }

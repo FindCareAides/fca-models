@@ -29,7 +29,7 @@ const ShiftSchema = new Schema<IShift>(
     status: {
       type: String,
       enum: ShiftStatusEnum,
-      default: "assigned",
+      default: ShiftStatusEnum.Assigned,
       index: true,
     },
     notes: String,
