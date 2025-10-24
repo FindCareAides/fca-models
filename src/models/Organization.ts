@@ -15,4 +15,4 @@ const OrganizationSchema = new Schema<IOrganization>({
   timezone: { type: String, required: true, index: true },
 });
 
-export const Organization: Model<OrganizationSchema> = models.Organization || model<IOrganization>("Organization", OrganizationSchema);
+export const OrganizationModel: Model<OrganizationSchema> = models.Organization || model<IOrganization>("Organization", OrganizationSchema);
