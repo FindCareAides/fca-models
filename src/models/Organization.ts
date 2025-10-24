@@ -13,6 +13,7 @@ const OrganizationSchema = new Schema<IOrganization>({
   country: { type: String, required: true, index: true },
   address: { type: String, required: true, index: true },
   timezone: { type: String, required: true, index: true },
+  ownerId: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
 export const OrganizationModel: Model<OrganizationSchema> = models.Organization || model<IOrganization>("Organization", OrganizationSchema);
