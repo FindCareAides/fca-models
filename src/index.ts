@@ -1,3 +1,4 @@
+export * from "./models/Organization";
 export * from "./models/User";
 export * from "./models/Facility";
 export * from "./models/Shift";

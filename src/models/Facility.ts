@@ -6,6 +6,7 @@ export interface IFacility extends BaseDocument, Document {
   address?: string;
   timezone?: string;
   admins?: mongoose.Types.ObjectId[];
+  organizationId: mongoose.Types.ObjectId;
 }
 
 const FacilitySchema = new Schema<IFacility>(
@@ -14,6 +15,7 @@ const FacilitySchema = new Schema<IFacility>(
     address: String,
     timezone: String,
     admins: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    organizationId: { type: mongoose.Schema.Types.ObjectId, ref: 'Organization', required: true, index: true }
   },
   { timestamps: true }
 );

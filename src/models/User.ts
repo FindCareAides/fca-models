@@ -3,7 +3,8 @@ import type { BaseDocument } from "../types/common";
 
 export enum UserRoleEnum {
   Admin= 'admin',
-  CareGiver = 'careGiver'
+  CareGiver = 'careGiver',
+  Owner = 'Owner'
 }
 
 export interface Availability {
@@ -20,8 +21,9 @@ export interface IUser extends BaseDocument, Document {
   password: string;
   role: UserRoleEnum;
   qualifications?: string[];
-  facilityId?: mongoose.Types.ObjectId;
   availability?: Availability[];
+  organizationId: mongoose.Types.ObjectId;
+  facilities?: mongoose.Types.ObjectId[];
 }
 
 const AvailabilitySchema = new Schema<Availability>({
@@ -39,8 +41,9 @@ const UserSchema = new Schema<IUser>(
     password: { type: String, required: true },
     role: { type: String, enum: UserRoleEnum, required: true, index: true },
     qualifications: [String],
-    facilityId: { type: Schema.Types.ObjectId, ref: "Facility" },
     availability: [AvailabilitySchema],
+    organizationId: { type: Schema.Types.ObjectId, ref: 'Organization', required: true, index: true },
+    facilities: [{ type: Schema.Types.ObjectId, ref: 'Facility' }]
   },
   { timestamps: true }
 );

@@ -10,6 +10,7 @@ export enum ShiftStatusEnum {
 
 export interface IShift extends BaseDocument, Document {
   facilityId: mongoose.Types.ObjectId;
+  organizationId: mongoose.Types.ObjectId;
   caregiverId?: mongoose.Types.ObjectId | null;
   startTime: Date;
   endTime: Date;
@@ -23,6 +24,7 @@ export interface IShift extends BaseDocument, Document {
 const ShiftSchema = new Schema<IShift>(
   {
     facilityId: { type: Schema.Types.ObjectId, ref: "Facility", required: true, index: true },
+    organizationId: { type: Schema.Types.ObjectId, ref: "Facility", required: true, index: true },
     caregiverId: { type: Schema.Types.ObjectId, ref: "User", default: null, index: true },
     startTime: { type: Date, required: true, index: true },
     endTime: { type: Date, required: true },
