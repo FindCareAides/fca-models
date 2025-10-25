@@ -24,6 +24,7 @@ export interface IUser extends BaseDocument, Document {
   availability?: Availability[];
   organizationId: mongoose.Types.ObjectId;
   facilities?: mongoose.Types.ObjectId[];
+  isActive: boolean;
 }
 
 const AvailabilitySchema = new Schema<Availability>({
@@ -39,6 +40,7 @@ const UserSchema = new Schema<IUser>(
     email: { type: String, required: true, unique: true, index: true },
     phone: { type: String },
     password: { type: String, required: true },
+    isActive: { type: Boolean, required: true },
     role: { type: String, enum: UserRoleEnum, required: true, index: true },
     qualifications: [String],
     availability: [AvailabilitySchema],
