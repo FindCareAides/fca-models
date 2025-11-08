@@ -5,3 +5,4 @@ export * from "./models/Shift";
 export * from "./models/SwapRequest";
 export * from "./models/Notification";
 export * from "./models/Sharelink";
+export * from "./models/Blockout";
