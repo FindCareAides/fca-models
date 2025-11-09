@@ -19,4 +19,4 @@ const BlockOutSchema = new Schema<IBlockOut>(
 );
 
 export const BlockOutModel =
-  mongoose.models.Facility || model<IBlockOut>("BlockOut", BlockOutSchema);
+  mongoose.models.BlockOut || model<IBlockOut>("BlockOut", BlockOutSchema);
