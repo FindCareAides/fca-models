@@ -18,7 +18,7 @@ export interface IUser extends BaseDocument, Document {
   lastName: string;
   email: string;
   phone?: string;
-  password: string;
+  password?: string;
   role: UserRoleEnum;
   qualifications?: string[];
   availability?: Availability[];
@@ -39,7 +39,7 @@ const UserSchema = new Schema<IUser>(
     lastName: { type: String, required: true, index: true },
     email: { type: String, required: true, unique: true, index: true },
     phone: { type: String },
-    password: { type: String, required: true },
+    password: { type: String },
     isActive: { type: Boolean, required: true },
     role: { type: String, enum: UserRoleEnum, required: true, index: true },
     qualifications: [String],
