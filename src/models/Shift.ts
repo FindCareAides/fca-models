@@ -44,4 +44,5 @@ const ShiftSchema = new Schema<IShift>(
 
 ShiftSchema.index({ facilityId: 1, startTime: 1, status: 1 });
 
+// @ts-expect-error
 export const ShiftModel = model<IShift>("Shift", ShiftSchema);

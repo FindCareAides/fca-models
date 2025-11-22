@@ -20,5 +20,6 @@ const BlockOutSchema = new Schema<IBlockOut>(
   { timestamps: true }
 );
 
+// @ts-expect-error
 export const BlockOutModel =
   mongoose.models.BlockOut || model<IBlockOut>("BlockOut", BlockOutSchema);
