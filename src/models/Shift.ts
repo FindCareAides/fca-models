@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model, Model } from "mongoose";
+import mongoose, { Schema, Document, model, models, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export enum ShiftStatusEnum {
