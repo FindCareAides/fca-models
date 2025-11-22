@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model, models, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export interface IBlockOut extends BaseDocument, Document {
@@ -21,5 +21,5 @@ const BlockOutSchema = new Schema<IBlockOut>(
 );
 
 // @ts-ignore
-export const BlockOutModel =
-  mongoose.models.BlockOut || model<IBlockOut>("BlockOut", BlockOutSchema);
+export const BlockOutModel: Model<BlockOutSchema> =
+  models.BlockOut || model<IBlockOut>("BlockOut", BlockOutSchema);
