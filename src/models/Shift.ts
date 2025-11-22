@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export enum ShiftStatusEnum {
@@ -45,4 +45,4 @@ const ShiftSchema = new Schema<IShift>(
 ShiftSchema.index({ facilityId: 1, startTime: 1, status: 1 });
 
 // @ts-ignore
-export const ShiftModel = model<IShift>("Shift", ShiftSchema);
+export const ShiftModel: Model<ShiftSchema> = models.Shift || model<IShift>("Shift", ShiftSchema);

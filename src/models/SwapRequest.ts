@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export enum SwapStatusEnum {
@@ -27,4 +27,4 @@ const SwapRequestSchema = new Schema<ISwapRequest>({
 }, { timestamps: true });
 
 // @ts-ignore
-export const SwapRequestModel = model<ISwapRequest>('SwapRequest', SwapRequestSchema);
+export const SwapRequestModel: Model<SwapRequestSchema> = models.SwapRequest || model<ISwapRequest>('SwapRequest', SwapRequestSchema);
