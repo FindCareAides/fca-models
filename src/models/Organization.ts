@@ -16,5 +16,5 @@ const OrganizationSchema = new Schema<IOrganization>({
   ownerId: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
-// @ts-expect-error
+// @ts-ignore
 export const OrganizationModel: Model<OrganizationSchema> = models.Organization || model<IOrganization>("Organization", OrganizationSchema);

@@ -19,6 +19,6 @@ const FacilitySchema = new Schema<IFacility>(
   { timestamps: true }
 );
 
-// @ts-expect-error
+// @ts-ignore
 export const FacilityModel =
   mongoose.models.Facility || model<IFacility>("Facility", FacilitySchema);

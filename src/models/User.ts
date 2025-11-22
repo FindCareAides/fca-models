@@ -52,5 +52,5 @@ const UserSchema = new Schema<IUser>(
 
 UserSchema.index({ facilityId: 1, role: 1 });
 
-// @ts-expect-error
+// @ts-ignore
 export const UserModel: Model<UserSchema> = models.User || model<IUser>("User", UserSchema);
