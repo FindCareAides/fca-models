@@ -13,6 +13,7 @@ const OrganizationSchema = new Schema<IOrganization>({
   country: { type: String, required: true, index: true },
   address: { type: String, required: true, index: true },
   timezone: { type: String, required: true, index: true },
+  // @ts-ignore
   ownerId: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
