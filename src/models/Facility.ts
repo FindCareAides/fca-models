@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model, models, Model } from "mongoose";
 import type { BaseDocument } from "../types/common";
 
 export interface IFacility extends BaseDocument, Document {
@@ -20,5 +20,5 @@ const FacilitySchema = new Schema<IFacility>(
 );
 
 // @ts-ignore
-export const FacilityModel =
-  mongoose.models.Facility || model<IFacility>("Facility", FacilitySchema);
+export const FacilityModel: Model<FacilitySchema> =
+  models.Facility || model<IFacility>("Facility", FacilitySchema);
