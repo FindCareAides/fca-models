@@ -44,5 +44,4 @@ const ShiftSchema = new Schema<IShift>(
 
 ShiftSchema.index({ facilityId: 1, startTime: 1, status: 1 });
 
-// @ts-ignore
-export const ShiftModel: Model<ShiftSchema> = models.Shift || model<IShift>("Shift", ShiftSchema);
+export const ShiftModel = model("Shift", ShiftSchema) as Model<IShift>;

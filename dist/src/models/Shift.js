@@ -27,6 +27,5 @@ const ShiftSchema = new mongoose_1.Schema({
     recurrenceRule: String,
 }, { timestamps: true });
 ShiftSchema.index({ facilityId: 1, startTime: 1, status: 1 });
-// @ts-ignore
-exports.ShiftModel = mongoose_1.models.Shift || (0, mongoose_1.model)("Shift", ShiftSchema);
+exports.ShiftModel = (0, mongoose_1.model)("Shift", ShiftSchema);
 //# sourceMappingURL=Shift.js.map

@@ -17,5 +17,4 @@ const OrganizationSchema = new Schema<IOrganization>({
   ownerId: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
-// @ts-ignore
-export const OrganizationModel: Model<OrganizationSchema> = models.Organization || model<IOrganization>("Organization", OrganizationSchema);
+export const OrganizationModel = model("Organization", OrganizationSchema) as Model<IOrganization>;

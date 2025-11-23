@@ -10,6 +10,5 @@ const OrganizationSchema = new mongoose_1.Schema({
     // @ts-ignore
     ownerId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'User' },
 });
-// @ts-ignore
-exports.OrganizationModel = mongoose_1.models.Organization || (0, mongoose_1.model)("Organization", OrganizationSchema);
+exports.OrganizationModel = (0, mongoose_1.model)("Organization", OrganizationSchema);
 //# sourceMappingURL=Organization.js.map

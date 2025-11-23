@@ -26,5 +26,4 @@ const SwapRequestSchema = new Schema<ISwapRequest>({
   updatedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 
-// @ts-ignore
-export const SwapRequestModel: Model<SwapRequestSchema> = models.SwapRequest || model<ISwapRequest>('SwapRequest', SwapRequestSchema);
+export const SwapRequestModel = model('SwapRequest', SwapRequestSchema) as Model<ISwapRequest>;

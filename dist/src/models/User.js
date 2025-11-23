@@ -27,6 +27,5 @@ const UserSchema = new mongoose_1.Schema({
     facilities: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Facility' }]
 }, { timestamps: true });
 UserSchema.index({ facilityId: 1, role: 1 });
-// @ts-ignore
-exports.UserModel = mongoose_1.models.User || (0, mongoose_1.model)("User", UserSchema);
+exports.UserModel = (0, mongoose_1.model)("User", UserSchema);
 //# sourceMappingURL=User.js.map

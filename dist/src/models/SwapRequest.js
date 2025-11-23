@@ -51,6 +51,5 @@ const SwapRequestSchema = new mongoose_1.Schema({
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
-// @ts-ignore
-exports.SwapRequestModel = mongoose_1.models.SwapRequest || (0, mongoose_1.model)('SwapRequest', SwapRequestSchema);
+exports.SwapRequestModel = (0, mongoose_1.model)('SwapRequest', SwapRequestSchema);
 //# sourceMappingURL=SwapRequest.js.map
