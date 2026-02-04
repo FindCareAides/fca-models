@@ -20,6 +20,7 @@ const UserSchema = new mongoose_1.Schema({
     phone: { type: String },
     password: { type: String },
     isActive: { type: Boolean, required: true },
+    pendingInvitation: { type: Boolean, required: true },
     role: { type: String, enum: UserRoleEnum, required: true, index: true },
     qualifications: [String],
     availability: [AvailabilitySchema],

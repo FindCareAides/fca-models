@@ -25,6 +25,7 @@ export interface IUser extends BaseDocument, Document {
   organizationId: Types.ObjectId;
   facilities?: Types.ObjectId[];
   isActive: boolean;
+  pendingInvitation: boolean;
 }
 
 const AvailabilitySchema = new Schema<Availability>({
@@ -41,6 +42,7 @@ const UserSchema = new Schema<IUser>(
     phone: { type: String },
     password: { type: String },
     isActive: { type: Boolean, required: true },
+    pendingInvitation: { type: Boolean, required: true },
     role: { type: String, enum: UserRoleEnum, required: true, index: true },
     qualifications: [String],
     availability: [AvailabilitySchema],
