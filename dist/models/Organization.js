@@ -9,6 +9,12 @@ const OrganizationSchema = new mongoose_1.Schema({
     timezone: { type: String, required: true, index: true },
     // @ts-ignore
     ownerId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'User' },
+    stripeCustomerId: { type: String, sparse: true, index: true },
+    subscriptionStatus: {
+        type: String,
+        enum: ['trialing', 'active', 'past_due', 'canceled', 'unpaid', 'incomplete', 'none'],
+        default: 'none',
+    },
 });
 exports.OrganizationModel = (0, mongoose_1.model)("Organization", OrganizationSchema);
 //# sourceMappingURL=Organization.js.map

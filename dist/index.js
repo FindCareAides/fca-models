@@ -22,4 +22,5 @@ __exportStar(require("./models/SwapRequest"), exports);
 __exportStar(require("./models/Notification"), exports);
 __exportStar(require("./models/Sharelink"), exports);
 __exportStar(require("./models/Blockout"), exports);
+__exportStar(require("./models/Subscription"), exports);
 //# sourceMappingURL=index.js.map
